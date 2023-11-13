@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    <h1 class="text-center mb-3">{% block title %} Welcome to Shorty {% endblock %}</h1>
+    <h1 class="text-center mb-5">{% block title %} Welcome to Shorty {% endblock %}</h1>
     <div class="flex justify-center">
-        <div class="w-1/2">
+        <div class="w-1/2 text-center">
             <form method="post" action="{{url_for('index')}}">
                 <div class="mb-3">
                     <input type="text" name="url" id="url"

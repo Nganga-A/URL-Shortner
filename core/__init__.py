@@ -3,10 +3,10 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_migrate import Migrate
 from decouple import config
 
-app = Flask(__name__)
+app = Flask(__name__,template_folder='templates')
 app.config.from_object(config("APP_SETTINGS"))
 
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
 
-# from core import routes
+from core import routes
