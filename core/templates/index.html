@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="text-center mb-3">{% block title %} Welcome to Shorty {% endblock %}</h1>
+    <div class="flex justify-center">
+        <div class="w-1/2">
+            <form method="post" action="{{url_for('index')}}">
+                <div class="mb-3">
+                    <input type="text" name="url" id="url"
+                        placeholder="Enter looooooooooooong URL" class="w-full p-2 border rounded"
+                        value="{{ request.form['url'] }}" autofocus />
+                </div>
+                <div class="mb-3">
+                    <input type="text" name="custom_id" id="custom_id"
+                        placeholder="Want to customise? (optional)" class="w-full p-2 border rounded"
+                        value="{{ request.form['custom_id'] }}" />
+                </div>
+
+                <div class="text-center">
+                    <button type="submit" class="btn btn-primary px-6 py-2">Shorten</button>
+                </div>
+            </form>
+
+            {% if short_url %}
+                <hr class="my-4">
+                <span class="block text-center"><a href="{{ short_url }}" target="_blank">{{ short_url }}</a></span>
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}
