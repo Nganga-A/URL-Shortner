@@ -13,7 +13,6 @@ charset-normalizer
 click
 colorama
 cryptography
-cupshelpers
 dbus-python
 decorator
 defer
