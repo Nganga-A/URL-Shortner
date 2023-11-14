@@ -19,6 +19,7 @@ defusedxml
 distlib
 distro
 distro-info
+distUtilsExtra
 entrypoints
 exceptiongroup
 Faker
