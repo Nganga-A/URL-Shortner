@@ -19,7 +19,8 @@ defusedxml
 distlib
 distro
 distro-info
-DistUtilsExtra
+python-distutils-extra==2.39
+
 entrypoints
 exceptiongroup
 Faker
