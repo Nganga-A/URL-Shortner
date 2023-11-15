@@ -19,8 +19,6 @@ defusedxml
 distlib
 distro
 distro-info
-python-distutils-extra
-
 entrypoints
 exceptiongroup
 Faker
