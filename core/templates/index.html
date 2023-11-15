@@ -11,13 +11,13 @@
                         <input type="text" name="url" id="url"
                             placeholder="Enter looooooooooooong URL" class="form-control"
                             value="{{ request.form['url'] }}" autofocus></input>
-                        <label for="url">URL</label>
+                        <label for="url">Enter looooooooooooong URL</label>
                     </div>
                     <div class="form-floating mb-3">
                         <input type="text" name="custom_id" id="custom_id"
                             placeholder="Want to customise? (optional)" class="form-control"
                             value="{{ request.form['custom_id'] }}"></input>
-                        <label for="custom_id">Custom Short ID</label>
+                        <label for="custom_id"> Enter custom short ID to customize</label>
                     </div>
 
                     <div class="form-group text-center">
@@ -27,10 +27,40 @@
 
                 {% if short_url %}
                     <hr>
-                    <span><a href="{{ short_url }}" target="_blank">{{ short_url }}</a></span>
+                    <div class="input-group mb-3">
+                        <input type="text" id="shortUrl" class="form-control" value="{{ short_url }}" readonly>
+                        <button class="btn btn-outline-secondary" type="button" onclick="copyToClipboard()">
+                            <i class="fas fa-clipboard"></i> <!-- Font Awesome Clipboard Icon -->
+                        </button>
+                    </div>
+
+                    <!-- Bootstrap Alert for Feedback -->
+                    <div class="alert alert-success" role="alert" id="copyAlert" style="display: none;">
+                        Short URL copied to clipboard!
+                    </div>
                 {% endif %}
             </div>
             <div class="col-md-2"></div>
         </div>
     </div>
+
+    <!-- Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <script>
+        function copyToClipboard() {
+            var shortUrlInput = document.getElementById('shortUrl');
+            shortUrlInput.select();
+            document.execCommand('copy');
+
+            // Display feedback alert
+            var copyAlert = document.getElementById('copyAlert');
+            copyAlert.style.display = 'block';
+
+            // Optionally, you can hide the alert after a few seconds
+            setTimeout(function () {
+                copyAlert.style.display = 'none';
+            }, 4000);
+        }
+    </script>
 {% endblock %}
