@@ -19,7 +19,7 @@ defusedxml
 distlib
 distro
 distro-info
-python-distutils-extra==2.39
+python-distutils-extra
 
 entrypoints
 exceptiongroup
