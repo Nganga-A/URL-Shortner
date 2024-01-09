@@ -59,6 +59,8 @@ URL Shortify is a simple web application that allows users to shorten long URLs 
 - Copy the generated short URL using the "Copy" button.
 - Share the short URL!
 
+[](assets/short.png)
+
 
 
 ## Contributing
